@@ -44,8 +44,8 @@ def run():
     reduced_scaled = pca.transform(scaled)
 
     #Asignamos las componentes reducidas como nuevas columnas al dataframe 
-    iris["pca_1"] = scaled[:, 0]
-    iris["pca_2"] = scaled[:, 1]
+    iris["pca_1"] = reduced_scaled[:, 0]
+    iris["pca_2"] = reduced_scaled[:, 1]
 
     #visualizacion de conjunto de datos reducido en esas componentes principales en dos dimensiones
     sns.jointplot(iris["pca_1"], iris["pca_2"], hue = iris["species"], data=iris)
